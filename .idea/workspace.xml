@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b580b622-f434-4f2b-a680-ae803c0f6e8d" name="Changes" comment="Dase de Batos">
-      <change afterPath="$PROJECT_DIR$/aprendeBD04(dict).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aprendeBD03.py" beforeDir="false" afterPath="$PROJECT_DIR$/aprendeBD03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aprendeBD04(dict).py" beforeDir="false" afterPath="$PROJECT_DIR$/aprendeBD04(dict).py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.aprendeBD01.executor": "Run",
     "Python.aprendeBD03.executor": "Run",
-    "Python.aprendeBD04(dict).executor": "Debug",
+    "Python.aprendeBD04(dict).executor": "Run",
     "Python.lol.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -89,22 +88,19 @@
       <option name="project" value="LOCAL" />
       <updated>1771964809715</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dase de Batos">
+      <option name="closed" value="true" />
+      <created>1772134503974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772134503974</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dase de Batos" />
     <option name="LAST_COMMIT_MESSAGE" value="Dase de Batos" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aprendeBD04(dict).py</url>
-          <line>98</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

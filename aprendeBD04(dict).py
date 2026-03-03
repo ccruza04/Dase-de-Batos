@@ -1,5 +1,5 @@
 import sqlite3
-
+import logging
 db_name = 'librosv3.db'
 
 # Ejemplo de libro válido
@@ -15,7 +15,9 @@ libro = {
 class libroDB:
     def __init__(self):
         self.conexion = sqlite3.connect(db_name)
+        self.conexion.row_factory = sqlite3.Row
         self.cursor = self.conexion.cursor()
+
         self.crear_tablas()
 
     def crear_tablas(self):
@@ -47,6 +49,7 @@ class libroDB:
             self.conexion.commit()
             print("Libro añadido correctamente")
         except Exception as e:
+            logging.error(e)
             print(f"Error al añadir libro: {e}")
 
     def delete_libro(self, id:int) -> bool:
@@ -81,16 +84,23 @@ class libroDB:
 
     def get_by_isbn(self, isbn):
         self.cursor.execute("SELECT * FROM libros WHERE isbn = ?", (isbn,))
-        return self.cursor.fetchone()
+        libro=self.cursor.fetchone()
+        libro_dict=dict(libro) if libro else None
+        return libro_dict
 
     def filter_by_autor(self, autor):
-        self.cursor.execute("SELECT * FROM libros WHERE autor = ?", (autor,))
-        return self.cursor.fetchall()
+        libros = self.cursor.execute("SELECT * FROM libros WHERE autor = ?", (autor,))
+        libros_dict = [dict(libro) for libro in libros]
+        return libros_dict
 
     def get_libro(self, id:int) -> dict:
-        sql = "SELECT id, isbn, titulo, autor, editorial, fecha_publicacion FROM libros WHERE id = ?"
-        self.cursor.execute(sql, (id,))
-        libro_dict=dict(self.cursor.fetchone())
+        try:
+            sql = "SELECT id, isbn, titulo, autor, editorial, fecha_publicacion FROM libros WHERE id = ?"
+            self.cursor.execute(sql, (id,))
+
+            libro_dict=dict(self.cursor.fetchone())
+        except Exception as e:
+            print(f"Error al obtener libro: {e}")
         return libro_dict
 
     def get_all_libros(self) -> list:
@@ -106,9 +116,15 @@ class libroDB:
 
 if __name__ == '__main__':
     db = libroDB()
-    filtro_autor=db.filter_by_autor("Charles Dick")
-    print(f"lalalalal {filtro_autor}")
+    id = db.add_libros(
+        {"isbn": "978-00-00-000001",
+         "titulo":"El Quijote",
+         "autor":"Cervantes",
+         "editorial":"El Quijote",
+         "fecha_publicacion":1600}
+    )
     db.add_libros(libro)
+    print(id)
 
     # Mostrar cada libro en una línea
     for l in db.get_all_libros():
