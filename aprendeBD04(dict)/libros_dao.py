@@ -77,19 +77,27 @@ class LibrosDao:
         libros_dict = [dict(libro) for libro in libros]
         return libros_dict
 
-    def get_libro(self, id:int) -> dict:
-        try:
-            sql = "fSELECT id, isbn, titulo, autor, editorial, fecha_publicacion FROM {table_name} WHERE id = ?"
-            self.cursor.execute(sql, (id,))
+    def get(self, id:int) -> dict:
+        # try:
+        #     sql = f"SELECT id, isbn, titulo, autor, editorial, fecha_publicacion FROM {table_name} WHERE id = ?"
+        #     self.cursor.execute(sql, (id,))
+        #
+        #     libro_dict=dict(self.cursor.fetchone())
+        # except Exception as e:
+        #     print(f"Error al obtener libro: {e}")
+        # return libro_dict
+        with self.conn:
+            sql = f"SELECT id, isbn, titulo, autor, editorial, fecha_publicacion FROM {table_name} WHERE id = ?"
+            cursor = self.conn.execute(sql, (id,))
+            row = cursor.fetchone()
+            lista = cursor.fetchall()
+            # libros_dict=[dict(libro) for libro in lista]
+            return [dict(libro) for libro in lista]
 
-            libro_dict=dict(self.cursor.fetchone())
-        except Exception as e:
-            print(f"Error al obtener libro: {e}")
-        return libro_dict
-
-    def get_all_libros(self) -> list:
-        self.cursor.execute(f"SELECT id, isbn, titulo, autor, editorial, fecha_publicacion, descripcion FROM {table_name}")
-        libros=self.cursor.fetchall()
-        libros_dict=[dict(libro) for libro in libros]
-        return libros_dict
+    def get_all(self) -> list:
+        with self.conn:
+            cursor = self.conn.execute(f"SELECT id, isbn, titulo, autor, editorial, fecha_publicacion, descripcion FROM {table_name}")
+            lista = cursor.fetchall()
+            # libros_dict=[dict(libro) for libro in lista]
+            return [dict(libro) for libro in lista]
 
