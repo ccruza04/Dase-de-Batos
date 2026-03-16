@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b580b622-f434-4f2b-a680-ae803c0f6e8d" name="Changes" comment="Dase de Batos">
-      <change afterPath="$PROJECT_DIR$/aprende_db05_obj/Libro.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aprende_db05_obj/LibrosDB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aprende_db05_obj/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aprende_db05_obj/librosv4.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aprendeBD04(dict)/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aprendeBD04(dict)/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aprendeBD04(dict)/libros_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aprende_db05_obj/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/aprende_db05_obj/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.LibrosDB.executor": "Run",
+    "Python.app.executor": "Run",
     "Python.aprendeBD01.executor": "Run",
     "Python.aprendeBD03.executor": "Run",
     "Python.aprendeBD04(dict).executor": "Run",
@@ -59,12 +61,13 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/cepy/PycharmProjects/APRENDE/Dase de Batos/aprende_db05_obj",
+    "last_opened_file_path": "C:/Users/cepy/PycharmProjects/APRENDE/Dase de Batos/aprendeBD04(dict)",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cepy\PycharmProjects\APRENDE\Dase de Batos\aprendeBD04(dict)" />
       <recent name="C:\Users\cepy\PycharmProjects\APRENDE\Dase de Batos\aprende_db05_obj" />
       <recent name="C:\Users\cepy\PycharmProjects\APRENDE\Dase de Batos" />
     </key>
@@ -108,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772565883546</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Dase de Batos">
+      <option name="closed" value="true" />
+      <created>1772739268709</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772739268709</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
